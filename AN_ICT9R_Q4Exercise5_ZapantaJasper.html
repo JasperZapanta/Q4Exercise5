@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+	<style type="text/css">
+		#img1{
+			width: 350px;
+		}
+		#img2{
+			width: 400px;
+		}
+		#bulb{
+			width: 65px;
+		}
+		body{
+			background-color: #110b3b;
+		}
+	</style>
+	<title>Q4 Exercise 5</title>
+</head>
+<body>
+	<header class="container"><br>
+		<h1 class="text-center text-light">The Ohm's Law</h1><br>
+	</header>
+<div class="container bg-light rounded shadow-lg border">
+	<br>
+	<p>Ohm's Law is a formula used to calculate the relationship between voltage, current and resistance in an electrical circuit.
+
+	To students of electronics, Ohm's Law (E = IR) is as fundamentally important as Einstein's Relativity equation (E = mc²) is to physicists.</p>
+	<img id="img1" src="https://i.ibb.co/HgTRmtn/ohms.png" alt="ohms" border="0"></a><br><br><br>
+	<p> calculate the amount of Current (I) in a circuit, given values of voltage (E) and Resistance(R):</p>
+	<div class="row">
+		<div class="col-6">
+			Enter Volatage(E): <input type="text" id="V" class="form-control">
+			Enter Volatage(R): <input type="text" id="R" class="form-control"><br>
+			<input type="submit" value="COMPUTE" class="btn btn-primary" onclick="calculate()">
+			<p id="OUTPUT"></p>
+		</div>
+		<div class="col-6">
+			<img id="img2" src="https://www.allaboutcircuits.com/uploads/articles/current-flow-voltage-battery.jpg">
+		</div>
+	</div>
+</div><br>
+<div class="container bg-light rounded shadow-lg"><br>
+	
+	<h2>💡 What makes a light bulb light up?</h2>
+	<p>When a light bulb connects to an electrical power supply, an electrical current flows from one metal contact to the other. As the current travels through the wires and the filament, the filament heats up to the point where it begins to emit photons, which are small packets of visible light.</p>
+	<button class="btn btn-primary" onmouseover="on()" onmouseout="off()">TURN ON LIGHT</button>
+    <img src="turnoff.PNG" id="bulb"><br><br>
+</div><br>
+
+
+
+<script type="text/javascript">
+    function calculate() {
+        let V = document.getElementById('V').value;
+        let R = document.getElementById('R').value;
+        let Current = V/R;
+        document.getElementById('OUTPUT'). innerHTML = "The computed Current(I) is :" +
+        Current;
+        }
+         function on(){
+            document.getElementById('bulb').src = "turnon.PNG"
+            document.getElementById('audio').play();
+        }
+        function off(){
+            document.getElementById('bulb').src = "turnoff.PNG"
+            document.getElementById('audio').pause();
+        }
+</script>
+
+<div class="container bg-light rounded shadow-lg"><br>
+	SOURCES :<br>
+	<a href="https://www.fluke.com/en-ph/learn/blog/electrical/what-is-ohms-law">What is Ohm’s Law?</a><br>
+	<a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">Ohm’s Law - How Voltage, Current, and Resistance Relate
+	</a>
+<br><br>
+</div>
+
+
+</body>
+</html>
